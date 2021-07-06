@@ -1,9 +1,12 @@
+// /store/blocks/home/home.jsonc
 {
   "store.home": {
     "blocks": [
       "flex-layout.row#slider",
-      "shelf#new-arrivals",
-      "shelf#clearance",
+      "rich-text#new-arrivals",
+      "list-context.product-list#new-arrivals",
+      "rich-text#clearance",
+      "list-context.product-list#clearance",
       "__fold__",
       "flex-layout.row#newsletter",
       "rich-text#brands",
@@ -36,45 +39,54 @@
   },
 
   "flex-layout.row#brands": {
-    "children": [
-      "slider-layout#brands"
-    ],
+    "children": ["slider-layout#brands"],
     "props": {
       "marginTop": 4,
       "marginBottom": 8
     }
   },
 
-  "shelf#new-arrivals": {
-    "blocks": ["product-summary.shelf"],
+  "rich-text#new-arrivals": {
     "props": {
-      "orderBy": "OrderByTopSaleDESC",
-      "paginationDotsVisibility": "never",
-      "collection": "139",
-      "productList": {
-        "maxItems": 9,
-        "itemsPerPage": 3,
-        "minItemsPerPage": 1.5,
-        "scroll": "BY_PAGE",
-        "arrows": true,
-        "titleText": "New arrivals"
-      }
+      "text": "New arrivals",
+      "font": "t-heading-2",
+      "textPosition": "CENTER",
+      "textAlign": "CENTER"
+    }
+  },
+  "rich-text#clearance": {
+    "props": {
+      "text": "Clearance",
+      "font": "t-heading-2",
+      "textPosition": "CENTER",
+      "textAlign": "CENTER"
     }
   },
 
-  "shelf#clearance": {
+  "list-context.product-list#new-arrivals": {
     "blocks": ["product-summary.shelf"],
+    "children": ["slider-layout#shelf"],
+    "props": {
+      "orderBy": "OrderByTopSaleDESC",
+      "paginationDotsVisibility": "never",
+      "collection": "139"
+    }
+  },
+
+  "list-context.product-list#clearance": {
+    "blocks": ["product-summary.shelf"],
+    "children": ["slider-layout#shelf"],
     "props": {
       "orderBy": "OrderByTopSaleDESC",
       "collection": "140",
-      "paginationDotsVisibility": "desktopOnly",
-      "productList": {
-        "maxItems": 9,
-        "itemsPerPage": 3,
-        "minItemsPerPage": 1.5,
-        "scroll": "BY_PAGE",
-        "arrows": true,
-        "titleText": "Clearance"
+      "paginationDotsVisibility": "desktopOnly"
+    }
+  },
+
+  "slider-layout#shelf": {
+    "props": {
+      "itemsPerPage": {
+        "desktop": 3
       }
     }
   }
