@@ -7,7 +7,7 @@
  * The store/blocks.json file is intended for backwards compatibility, for miscellaneous
  * blocks, or if the app is simple enough that it doesn't warrant splitting the file.
  */
-{
+ {
   "store.orderplaced": {
     "blocks": ["order-placed"]
   },
@@ -47,6 +47,11 @@
       "product-summary-image",
       "product-summary-specification-badges"
     ]
+  },
+  "product-summary-image": {
+    "props": {
+      "width": 281
+    }
   },
 
   "product-summary-specification-badges": {
