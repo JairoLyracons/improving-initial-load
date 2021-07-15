@@ -69,7 +69,7 @@
     "props": {
       "orderBy": "OrderByTopSaleDESC",
       "paginationDotsVisibility": "never",
-      "collection": "139"
+      "collection": "159"
     }
   },
 
@@ -78,7 +78,7 @@
     "children": ["slider-layout#shelf"],
     "props": {
       "orderBy": "OrderByTopSaleDESC",
-      "collection": "140",
+      "collection": "159",
       "paginationDotsVisibility": "desktopOnly"
     }
   },
